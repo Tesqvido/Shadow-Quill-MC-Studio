@@ -1,6 +1,6 @@
 async function updateGlobalDownloads(packName, index) {
     try {
-        const response = await fetch("/api/downloads", {
+        const response = await fetch("./api/downloads", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ packName })
