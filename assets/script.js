@@ -10,13 +10,12 @@ const packContainer = document.querySelector(".pack-list");
 const searchInput = document.querySelector(".search-bar");
 const tabs = document.querySelectorAll("nav ul li a");
 
-// Map für Tabs zu Tags erstellen
 const tabToTagMap = {
     "Addons": "Addon",
     "Worlds": "World",
     "Texture Packs": "Texture Pack",
-    "Kontakt": "All", // Kontakt zeigt alle Packs an
-    "All": "All" // Default-Tab (falls benötigt)
+    "Kontakt": "All",
+    "All": "All"
 };
 
 // Funktion zum Rendern der Packs nach Filter (Suchbegriff oder Tab)
@@ -31,6 +30,9 @@ function renderPacks(filter = "", tagFilter = "All") {
         .forEach(pack => {
             const packElement = document.createElement("div");
             packElement.classList.add("pack");
+            const encodedPackName = encodeURIComponent(pack.name); // Encode für URL
+            const shareLink = `${window.location.origin}${window.location.pathname}?pack=${encodedPackName}`;
+
             packElement.innerHTML = `
                 <img src="${pack.img}" alt="${pack.name}" class="pack-icon">
                 <div class="pack-info">
@@ -39,7 +41,7 @@ function renderPacks(filter = "", tagFilter = "All") {
                     <div class="pack-actions">
                         <button class="download-btn">Download</button>
                         <div class="social-share">
-                            <a href="#">🔗 Share</a>
+                            <a href="${shareLink}" target="_blank">🔗 Share</a>
                         </div>
                     </div>
                 </div>
@@ -57,13 +59,25 @@ searchInput.addEventListener("input", e => {
 tabs.forEach(tab => {
     tab.addEventListener("click", e => {
         e.preventDefault();
-        const tabText = tab.innerText; // Text des Tabs (z. B. "Addons")
-        const tag = tabToTagMap[tabText] || "All"; // Map zu `tag` oder "All"
+        const tabText = tab.innerText;
+        const tag = tabToTagMap[tabText] || "All";
         renderPacks("", tag);
         tabs.forEach(t => t.classList.remove("active"));
-        tab.classList.add("active"); // Markiert aktives Tab
+        tab.classList.add("active");
     });
 });
 
-// Packs initial rendern
-renderPacks();
+// Wenn es einen "pack" URL-Parameter gibt, wird das entsprechende Pack automatisch gefiltert
+function handlePackParam() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const packParam = urlParams.get("pack");
+
+    if (packParam) {
+        renderPacks(packParam);
+    } else {
+        renderPacks(); // Render alle Packs, wenn kein Parameter vorhanden ist
+    }
+}
+
+// Packs initial rendern (inklusive Überprüfung auf "pack" URL-Parameter)
+handlePackParam();
