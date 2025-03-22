@@ -1,27 +1,10 @@
 // Packs-Daten simulieren (wird später dynamisch gemacht)
 const packs = [
-    { name: "Chat Ranks", tag: "Addon", description: "Add chat ranks to your server.", img: "./assets/chatranks.png"},
-    { name: "Server GUI", tag: "Addon", description: "Transforms mobs into human girls.", img: "pack2.png"},
-    { name: "Simple Texture Pack", tag: "Texture Pack", description: "Minimalist textures.", img: "pack3.png"},
-    { name: "Fantasy World", tag: "World", description: "Custom fantasy world map.", img: "pack4.png"}
+    { name: "Chat Ranks", tag: "Addon", description: "Add chat ranks to your server.", img: "./assets/chatranks.png" },
+    { name: "Server GUI", tag: "Addon", description: "Transforms mobs into human girls.", img: "pack2.png" },
+    { name: "Simple Texture Pack", tag: "Texture Pack", description: "Minimalist textures.", img: "pack3.png" },
+    { name: "Fantasy World", tag: "World", description: "Custom fantasy world map.", img: "pack4.png" }
 ];
-
-// Downloads aus LocalStorage wiederherstellen
-function loadDownloads() {
-    const storedDownloads = JSON.parse(localStorage.getItem("packDownloads")) || {};
-    packs.forEach((pack, index) => {
-        pack.downloads = storedDownloads[pack.name] || 0;
-    });
-}
-
-// Downloads in LocalStorage speichern
-function saveDownloads() {
-    const downloadsToStore = {};
-    packs.forEach(pack => {
-        downloadsToStore[pack.name] = pack.downloads;
-    });
-    localStorage.setItem("packDownloads", JSON.stringify(downloadsToStore));
-}
 
 const packContainer = document.querySelector(".pack-list");
 const searchInput = document.querySelector(".search-bar");
@@ -36,7 +19,7 @@ function renderPacks(filter = "", tagFilter = "All") {
             pack.name.toLowerCase().includes(filter.toLowerCase()) &&
             (tagFilter === "All" || pack.tag === tagFilter)
         )
-        .forEach((pack, index) => {
+        .forEach(pack => {
             const packElement = document.createElement("div");
             packElement.classList.add("pack");
             packElement.innerHTML = `
@@ -44,9 +27,8 @@ function renderPacks(filter = "", tagFilter = "All") {
                 <div class="pack-info">
                     <h2>${pack.name}</h2>
                     <p>${pack.description}</p>
-                    <p class="download-count">Downloads: <span id="downloads-${index}">${pack.downloads}</span></p>
                     <div class="pack-actions">
-                        <button class="download-btn" data-index="${index}">Download</button>
+                        <button class="download-btn">Download</button>
                         <div class="social-share">
                             <a href="#">🔗 Share</a>
                         </div>
@@ -56,15 +38,7 @@ function renderPacks(filter = "", tagFilter = "All") {
             packContainer.appendChild(packElement);
         });
 
-    // Download-Button-Funktionalität aktivieren
-    document.querySelectorAll(".download-btn").forEach(button => {
-        button.addEventListener("click", () => {
-            const index = button.getAttribute("data-index");
-            packs[index].downloads += 1;
-            document.getElementById(`downloads-${index}`).innerText = packs[index].downloads;
-            saveDownloads(); // Speicher die Downloads nach jeder Aktion
-        });
-    });
+    // Download-Button-Funktionalität entfernt
 }
 
 // Event für die Suche
@@ -83,6 +57,5 @@ tabs.forEach(tab => {
     });
 });
 
-// Downloads laden und Packs initial rendern
-loadDownloads();
+// Packs initial rendern
 renderPacks();
