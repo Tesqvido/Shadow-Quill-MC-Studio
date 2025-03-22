@@ -1,6 +1,6 @@
 // Packs-Daten simulieren (wird später dynamisch gemacht)
 const packs = [
-    { name: "Chat Ranks", tag: "Addon", description: "Introduces human NPCs.", img: "pack1.png", downloads: 0 },
+    { name: "Chat Ranks", tag: "Addon", description: "Add chat ranks to your server.", img: "chat ranks.png", downloads: 0 },
     { name: "Server GUI", tag: "Addon", description: "Transforms mobs into human girls.", img: "pack2.png", downloads: 0 },
     { name: "Simple Texture Pack", tag: "Texture Pack", description: "Minimalist textures.", img: "pack3.png", downloads: 0 },
     { name: "Fantasy World", tag: "World", description: "Custom fantasy world map.", img: "pack4.png", downloads: 0 }
