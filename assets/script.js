@@ -10,15 +10,27 @@ const packContainer = document.querySelector(".pack-list");
 const searchInput = document.querySelector(".search-bar");
 const tabs = document.querySelectorAll("nav ul li a");
 
-const tabToTagMap = {
-    "Addons": "Addon",
-    "Worlds": "World",
-    "Texture Packs": "Texture Pack",
-    "Kontakt": "All",
-    "All": "All"
-};
+// Elemente für das Popup
+const sharePopup = document.getElementById("share-popup");
+const shareLinkInput = document.getElementById("share-link");
+const closePopupButton = document.getElementById("close-popup");
 
-// Funktion zum Rendern der Packs nach Filter (Suchbegriff oder Tab)
+// Funktion zum Anzeigen und automatischen Kopieren des Links
+function showSharePopup(link) {
+    shareLinkInput.value = link; // Link in das Textfeld einfügen
+    sharePopup.classList.remove("hidden"); // Popup anzeigen
+
+    // Link automatisch in die Zwischenablage kopieren
+    shareLinkInput.select();
+    document.execCommand("copy");
+}
+
+// Popup schließen, wenn auf den "Schließen"-Button geklickt wird
+closePopupButton.addEventListener("click", () => {
+    sharePopup.classList.add("hidden");
+});
+
+// Funktion zum Rendern der Packs nach Filter (Suchbegriff oder Tag)
 function renderPacks(filter = "", tagFilter = "All") {
     packContainer.innerHTML = ""; // Alte Packs entfernen
 
@@ -30,6 +42,7 @@ function renderPacks(filter = "", tagFilter = "All") {
         .forEach(pack => {
             const packElement = document.createElement("div");
             packElement.classList.add("pack");
+
             const encodedPackName = encodeURIComponent(pack.name); // Encode für URL
             const shareLink = `${window.location.origin}${window.location.pathname}?pack=${encodedPackName}`;
 
@@ -41,13 +54,21 @@ function renderPacks(filter = "", tagFilter = "All") {
                     <div class="pack-actions">
                         <button class="download-btn">Download</button>
                         <div class="social-share">
-                            <a href="${shareLink}" target="_blank">🔗 Share</a>
+                            <button class="copy-btn" data-link="${shareLink}">🔗 Copy Link</button>
                         </div>
                     </div>
                 </div>
             `;
             packContainer.appendChild(packElement);
         });
+
+    // Eventlistener für die Copy-Buttons hinzufügen
+    document.querySelectorAll(".copy-btn").forEach(button => {
+        button.addEventListener("click", () => {
+            const link = button.getAttribute("data-link");
+            showSharePopup(link); // Link anzeigen und kopieren
+        });
+    });
 }
 
 // Event für die Suche
@@ -60,24 +81,11 @@ tabs.forEach(tab => {
     tab.addEventListener("click", e => {
         e.preventDefault();
         const tabText = tab.innerText;
-        const tag = tabToTagMap[tabText] || "All";
-        renderPacks("", tag);
+        renderPacks("", tabText);
         tabs.forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
     });
 });
 
-// Wenn es einen "pack" URL-Parameter gibt, wird das entsprechende Pack automatisch gefiltert
-function handlePackParam() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const packParam = urlParams.get("pack");
-
-    if (packParam) {
-        renderPacks(packParam);
-    } else {
-        renderPacks(); // Render alle Packs, wenn kein Parameter vorhanden ist
-    }
-}
-
-// Packs initial rendern (inklusive Überprüfung auf "pack" URL-Parameter)
-handlePackParam();
+// Packs initial rendern
+renderPacks();
