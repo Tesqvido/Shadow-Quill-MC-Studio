@@ -10,6 +10,15 @@ const packContainer = document.querySelector(".pack-list");
 const searchInput = document.querySelector(".search-bar");
 const tabs = document.querySelectorAll("nav ul li a");
 
+// Map für Tabs zu Tags erstellen
+const tabToTagMap = {
+    "Addons": "Addon",
+    "Worlds": "World",
+    "Texture Packs": "Texture Pack",
+    "Kontakt": "All", // Kontakt zeigt alle Packs an
+    "All": "All" // Default-Tab (falls benötigt)
+};
+
 // Funktion zum Rendern der Packs nach Filter (Suchbegriff oder Tab)
 function renderPacks(filter = "", tagFilter = "All") {
     packContainer.innerHTML = ""; // Alte Packs entfernen
@@ -37,8 +46,6 @@ function renderPacks(filter = "", tagFilter = "All") {
             `;
             packContainer.appendChild(packElement);
         });
-
-    // Download-Button-Funktionalität entfernt
 }
 
 // Event für die Suche
@@ -50,7 +57,8 @@ searchInput.addEventListener("input", e => {
 tabs.forEach(tab => {
     tab.addEventListener("click", e => {
         e.preventDefault();
-        const tag = tab.innerText;
+        const tabText = tab.innerText; // Text des Tabs (z. B. "Addons")
+        const tag = tabToTagMap[tabText] || "All"; // Map zu `tag` oder "All"
         renderPacks("", tag);
         tabs.forEach(t => t.classList.remove("active"));
         tab.classList.add("active"); // Markiert aktives Tab
