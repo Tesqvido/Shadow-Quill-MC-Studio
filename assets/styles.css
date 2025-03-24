@@ -168,6 +168,7 @@ nav ul li a {
 }
 
 /* Favoriten-Button */
+/* Favoriten-Button */
 .favorite-btn {
     background: none;
     border: none;
@@ -178,17 +179,26 @@ nav ul li a {
     justify-content: center;
 }
 
+/* Stern-Symbol anzeigen */
 .star-icon {
-    width: 20px;
+    width: 20px;  /* Größe des Sterns */
     height: 20px;
-    background-size: contain;
-    display: inline-block;
+    background-image: url('star-empty.png');  /* Stern-Hintergrundbild */
+    background-size: contain;  /* Sicherstellen, dass das Bild sich korrekt skaliert */
+    background-repeat: no-repeat;  /* Verhindert Wiederholung des Sternbilds */
+    display: inline-block;  /* Block anzeigen */
 }
 
-/* Favoriten-Button: Stil für favorisierte Packs */
-.favorite-btn.favorited {
-    color: gold;
+/* Favoriten-Symbol, wenn favorisiert */
+.favorite-btn.favorited .star-icon {
+    background-image: url('star-filled.png');  /* Bild für den ausgefüllten Stern */
 }
+
+/* Favoriten-Button, wenn favorisiert */
+.favorite-btn.favorited {
+    color: gold;  /* Setzt zusätzliche Sternfarbe (falls nötig) */
+}
+
 
 footer {
     background-color: #222;
