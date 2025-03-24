@@ -190,26 +190,25 @@ footer {
 .favorite-btn {
     background: none;
     border: none;
-    color: gray;
-    font-size: 1.2rem;
+    padding: 10px;  /* Gleiche Padding-Größe wie beim Download-Button */
     cursor: pointer;
     display: flex;
     align-items: center;
-}
-
-.favorite-btn.favorited {
-    color: gold;  /* Goldene Farbe für favorisierte Packs */
-}
-
-.star-icon {
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-image: url('star-empty.png');  /* Leer-Stern */
-    background-size: contain;
-    margin-right: 5px;
+    justify-content: center;
 }
 
 .favorite-btn.favorited .star-icon {
-    background-image: url('star-filled.png');  /* Goldener Stern */
+    background-image: url('star-filled.png');  /* Gefüllter Stern */
+}
+
+.star-icon {
+    width: 20px;  /* Größe anpassen */
+    height: 20px;
+    background-image: url('star-empty.png');  /* Ungefüllter Stern */
+    background-size: contain;
+    display: inline-block;
+}
+
+.favorite-btn.favorited {
+    color: gold;  /* Sternfarbe nur ändern, wenn favorisiert */
 }
