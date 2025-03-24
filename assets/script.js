@@ -14,22 +14,38 @@ const tabToTagMap = {
     "Addons": "Addon",
     "Worlds": "World",
     "Texture Packs": "Texture Pack",
+    "Favoriten": "Favorites",
     "Kontakt": "All",
     "All": "All"
 };
 
-// Funktion zum Rendern der Packs nach Filter (Suchbegriff oder Tab)
+// Favoriten aus localStorage laden oder leeres Array
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+// Funktion zum Favorisieren eines Packs
+function toggleFavorite(packName) {
+    if (favorites.includes(packName)) {
+        favorites = favorites.filter(fav => fav !== packName);  // Entfernen
+    } else {
+        favorites.push(packName);  // Hinzufügen
+    }
+    localStorage.setItem('favorites', JSON.stringify(favorites));  // Speichern
+}
+
+// Funktion zum Rendern der Packs nach Filter (Suchbegriff, Tab oder Favoriten)
 function renderPacks(filter = "", tagFilter = "All") {
     packContainer.innerHTML = ""; // Alte Packs entfernen
 
     packs
         .filter(pack =>
             pack.name.toLowerCase().includes(filter.toLowerCase()) &&
-            (tagFilter === "All" || pack.tag === tagFilter)
+            (tagFilter === "All" || (tagFilter === "Favorites" ? favorites.includes(pack.name) : pack.tag === tagFilter))
         )
         .forEach(pack => {
             const packElement = document.createElement("div");
             packElement.classList.add("pack");
+
+            const isFavorite = favorites.includes(pack.name);  // Überprüfen, ob Pack favorisiert ist
             const encodedPackName = encodeURIComponent(pack.name); // Encode für URL
             const shareLink = `${window.location.origin}${window.location.pathname}?pack=${encodedPackName}`;
 
@@ -40,13 +56,23 @@ function renderPacks(filter = "", tagFilter = "All") {
                     <p>${pack.description}</p>
                     <div class="pack-actions">
                         <button class="download-btn">Download</button>
+                        <button class="favorite-btn ${isFavorite ? 'favorited' : ''}" data-pack-name="${pack.name}">
+                            <i class="star-icon"></i> Favorisieren
+                        </button>
                         <div class="social-share">
                             <a href="${shareLink}" target="_blank">🔗 Share</a>
                         </div>
                     </div>
                 </div>
             `;
+
             packContainer.appendChild(packElement);
+
+            // Event-Listener für den Favoriten-Button
+            packElement.querySelector(".favorite-btn").addEventListener("click", (e) => {
+                toggleFavorite(pack.name);  // Favoritenstatus toggeln
+                renderPacks(filter, tagFilter);  // Neu rendern, um den Sternstatus zu aktualisieren
+            });
         });
 }
 
