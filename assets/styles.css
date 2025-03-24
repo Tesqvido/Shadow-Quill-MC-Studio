@@ -135,7 +135,6 @@ nav ul li a {
     flex-direction: column;  /* Schaltflächen untereinander anordnen */
     justify-content: center;  /* Zentriert die Buttons vertikal */
     align-items: center;  /* Schaltflächen horizontal zentrieren */
-    padding: 15px;  /* Padding für Abstand */
     gap: 10px;  /* Abstand zwischen den Schaltflächen */
     margin-top: 15px;  /* Abstand nach dem Text, damit es nicht aneinander klebt */
 }
