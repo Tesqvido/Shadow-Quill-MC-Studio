@@ -143,6 +143,7 @@ nav ul li a {
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
+    margin-top: 15px;  /* Abstand nach der Beschreibung */
 }
 
 /* Hover-Effekt für den Download-Button */
@@ -155,6 +156,7 @@ nav ul li a {
     display: flex;
     justify-content: space-between;
     padding: 15px;
+    gap: 10px;  /* Abstand zwischen den Buttons */
 }
 
 /* Favoriten-Button */
