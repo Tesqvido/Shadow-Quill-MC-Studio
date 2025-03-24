@@ -1,3 +1,11 @@
+const hamburgerMenuBtn = document.querySelector('.hamburger-menu');
+const mobileNav = document.querySelector('#mobile-nav');
+
+hamburgerMenuBtn.addEventListener('click', () => {
+    mobileNav.classList.toggle('hidden');
+});
+
+
 // Packs-Daten simulieren (wird später dynamisch gemacht)
 const packs = [
     { name: "Chat Ranks", tag: ["Addon"], description: "Add chat ranks to your server.", img: "./assets/chatranks.png", file: "./downloads/chatranks.zip" },
@@ -115,9 +123,3 @@ function handlePackParam() {
 
 // Packs initial rendern (inklusive Überprüfung auf "pack" URL-Parameter)
 handlePackParam();
-
-
-    function toggleMenu() {
-        const nav = document.getElementById('mobile-nav');  // Menüelement holen
-        nav.classList.toggle('hidden');  // Schaltet die Klasse "hidden" um (zeigt oder versteckt das Menü)
-    }
