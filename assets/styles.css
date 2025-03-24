@@ -128,26 +128,26 @@ nav ul li a {
 
 .pack-actions {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;  /* Vertikale Anordnung der Buttons */
+    justify-content: flex-start;
+    gap: 10px;  /* Abstand zwischen den Buttons */
 }
 
-.download-btn {
-    background-color: #2D9CDB;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.download-btn:hover {
-    background-color: #2375A8;
+.download-btn, .favorite-btn, .social-share a {
+    width: 100%;  /* Damit die Buttons die gleiche Breite haben */
+    padding: 10px;
+    text-align: center;
 }
 
 .social-share a {
+    background-color: #2D9CDB;  /* Farbe anpassen */
+    color: white;
     text-decoration: none;
-    color: #333;
-    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.social-share a:hover {
+    background-color: #2375A8;
 }
 
 footer {
