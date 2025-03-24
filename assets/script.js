@@ -14,11 +14,11 @@ const tabToTagMap = {
     "Addons": "Addon",
     "Worlds": "World",
     "Texture Packs": "Texture Pack",
-    "Favoriten": "Favorites",
+    "Favorites": "Favorites",
     "All": "All"
 };
 
-// Favoriten aus localStorage laden oder leeres Array
+// Favorites aus localStorage laden oder leeres Array
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 // Funktion zum Favorisieren eines Packs
@@ -31,7 +31,7 @@ function toggleFavorite(packName) {
     localStorage.setItem('favorites', JSON.stringify(favorites));  // Speichern
 }
 
-// Funktion zum Rendern der Packs nach Filter (Suchbegriff, Tab oder Favoriten)
+// Funktion zum Rendern der Packs nach Filter (Suchbegriff, Tab oder Favorites)
 function renderPacks(filter = "", tagFilter = "All") {
     packContainer.innerHTML = ""; // Alte Packs entfernen
 
@@ -66,9 +66,9 @@ function renderPacks(filter = "", tagFilter = "All") {
 `;
             packContainer.appendChild(packElement);
 
-            // Event-Listener für den Favoriten-Button
+            // Event-Listener für den Favorites-Button
             packElement.querySelector(".favorite-btn").addEventListener("click", (e) => {
-                toggleFavorite(pack.name);  // Favoritenstatus toggeln
+                toggleFavorite(pack.name);  // Favoritesstatus toggeln
                 renderPacks(filter, tagFilter);  // Neu rendern, um den Sternstatus zu aktualisieren
             });
         });
