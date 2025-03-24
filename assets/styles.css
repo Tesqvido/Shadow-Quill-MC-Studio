@@ -111,7 +111,6 @@ nav ul li a {
     object-fit: cover;  /* Skaliert das Bild, ohne das Seitenverhältnis zu verlieren */
     border-radius: 10px;  /* Optional: abgerundete Ecken */
     margin-bottom: 10px;  /* Abstand zwischen Icon und Favoriten-Button */
-    padding: 50px;
 }
 
 .pack-info {
