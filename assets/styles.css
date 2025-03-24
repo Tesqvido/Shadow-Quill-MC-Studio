@@ -105,6 +105,7 @@ nav ul li a {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
+    flex-direction: column;  /* Flexbox für vertikale Anordnung der Pack-Elemente */
 }
 
 .pack-icon {
@@ -112,10 +113,12 @@ nav ul li a {
     height: 150px;   /* Feste Höhe */
     object-fit: cover;  /* Skaliert das Bild, ohne das Seitenverhältnis zu verlieren */
     border-radius: 10px;  /* Optional: abgerundete Ecken */
+    margin-bottom: 10px;  /* Abstand zwischen Icon und Favoriten-Button */
 }
 
 .pack-info {
     padding: 15px;
+    flex-grow: 1;  /* Macht den Bereich flexibel, damit der Inhalt sich anpasst */
 }
 
 .pack-info h2 {
@@ -153,6 +156,7 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 10px;  /* Abstand zum Pack-Icon */
 }
 
 /* Favoriten-Button: Gefüllt (Stern) */
@@ -162,8 +166,8 @@ nav ul li a {
 
 /* Favoriten-Button: Ungefüllt (Stern) */
 .star-icon {
-    width: 40px;  /* Größe anpassen */
-    height: 40px;
+    width: 20px;  /* Größe anpassen */
+    height: 20px;
     background-image: url('star-empty.png');
     background-size: contain;
     display: inline-block;
