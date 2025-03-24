@@ -12,29 +12,26 @@
         <div class="top-banner">
             <img src="/assets/shadow quill background.png" alt="Banner" class="banner">
         </div>
-        <div class="nav-search-container">
-            <div class="logo-title">
-                <img src="/assets/ShadowQuill.png" alt="Logo" class="logo">
-                <h1>Shadow Quill Studio</h1>
-            </div>
+       <div class="nav-search-container">
+    <div class="logo-title">
+        <img src="/assets/ShadowQuill.png" alt="Logo" class="logo">
+        <h1>Shadow Quill Studio</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#all">All</a></li>
+            <li><a href="#packs">Addons</a></li>
+            <li><a href="#packs">Worlds</a></li>
+            <li><a href="#packs">Texture Packs</a></li>
+            <li><a href="#favorites">Favorites</a></li>
+            <li><a href="https://discord.gg/deinserver" target="_blank">Discord</a></li>
+        </ul>
+    </nav>
+    <div class="search-sort">
+        <input type="text" placeholder="Type and hit enter" class="search-bar">
+    </div>
+</div>
 
-            <!-- Hamburger-Menü-Button -->
-            <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
-
-            <nav id="mobile-nav" class="hidden">
-                <ul>
-                    <li><a href="#all">All</a></li>
-                    <li><a href="#packs">Addons</a></li>
-                    <li><a href="#packs">Worlds</a></li>
-                    <li><a href="#packs">Texture Packs</a></li>
-                    <li><a href="#favorites">Favorites</a></li>
-                    <li><a href="https://discord.gg/deinserver" target="_blank">Discord</a></li>
-                </ul>
-                <div class="search-sort">
-                    <input type="text" placeholder="Type and hit enter" class="search-bar">
-                </div>
-            </nav>
-        </div>
     </header>
 
     <main>
@@ -46,12 +43,6 @@
     <footer>
         <p>&copy; 2025 Shadow Quill Studio - Alle Rechte vorbehalten.</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const nav = document.getElementById('mobile-nav');
-            nav.classList.toggle('hidden');  // Öffnen/Schließen des Menüs
-        }
-    </script>
+    <script src="assets/script.js"></script>
 </body>
 </html>
