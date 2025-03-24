@@ -205,11 +205,11 @@ footer {
     width: 20px;
     height: 20px;
     display: inline-block;
-    background-image: url('./assets/star-empty.png');  /* Leer-Stern */
+    background-image: url('star-empty.png');  /* Leer-Stern */
     background-size: contain;
     margin-right: 5px;
 }
 
 .favorite-btn.favorited .star-icon {
-    background-image: url('./assets/star-filled.png');  /* Goldener Stern */
+    background-image: url('star-filled.png');  /* Goldener Stern */
 }
