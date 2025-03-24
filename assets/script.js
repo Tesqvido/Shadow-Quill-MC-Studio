@@ -50,21 +50,22 @@ function renderPacks(filter = "", tagFilter = "All") {
             const shareLink = `${window.location.origin}${window.location.pathname}?pack=${encodedPackName}`;
 
             packElement.innerHTML = `
-                <img src="${pack.img}" alt="${pack.name}" class="pack-icon">
-                <div class="pack-info">
-                    <h2>${pack.name}</h2>
-                    <p>${pack.description}</p>
-                    <div class="pack-actions">
-                        <button class="download-btn">Download</button>
-                        <button class="favorite-btn ${isFavorite ? 'favorited' : ''}" data-pack-name="${pack.name}">
-                            <i class="star-icon"></i> Favorisieren
-                        </button>
-                        <div class="social-share">
-                            <a href="${shareLink}" target="_blank">🔗 Share</a>
-                        </div>
-                    </div>
-                </div>
-            `;
+    <img src="${pack.img}" alt="${pack.name}" class="pack-icon">
+    <div class="pack-info">
+        <h2>${pack.name}</h2>
+        <p>${pack.description}</p>
+        <div class="pack-actions">
+            <button class="download-btn">Download</button>
+            <button class="favorite-btn ${isFavorite ? 'favorited' : ''}" data-pack-name="${pack.name}">
+                <i class="star-icon"></i>  <!-- Stern bleibt, aber kein Text -->
+            </button>
+            <div class="social-share">
+                <a href="${shareLink}" target="_blank">🔗 Share</a>
+            </div>
+        </div>
+    </div>
+`;
+
 
             packContainer.appendChild(packElement);
 
