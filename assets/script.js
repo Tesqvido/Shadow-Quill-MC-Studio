@@ -27,7 +27,7 @@ const tabToTagMap = {
 };
 
 // Favorites aus localStorage laden oder leeres Array
-let favorites = JSON.parse(localStorage.getItem('favorites')) || [];  // Korrektur: 'favorites' statt 'favortiten'
+let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
 // Funktion zum Favorisieren eines Packs
 function toggleFavorite(packName) {
@@ -39,8 +39,36 @@ function toggleFavorite(packName) {
     localStorage.setItem('favorites', JSON.stringify(favorites));  // Speichern
 }
 
+// Funktion zum Erstellen der Toast-Benachrichtigung
+function showToast(message) {
+    const toastContainer = document.getElementById("toast-container");
+    
+    // Erstelle ein Toast-Element
+    const toast = document.createElement("div");
+    toast.classList.add("toast");
+    toast.textContent = message;
+
+    // Füge das Toast dem Container hinzu
+    toastContainer.appendChild(toast);
+
+    // Zeige die Benachrichtigung
+    setTimeout(() => {
+        toast.classList.add("show");
+    }, 10); // Kleine Verzögerung, um die Animation zu ermöglichen
+
+    // Entferne die Benachrichtigung nach einer bestimmten Zeit
+    setTimeout(() => {
+        toast.classList.remove("show");
+        toast.classList.add("hide");
+
+        // Entferne das Toast nach der Animation
+        setTimeout(() => {
+            toast.remove();
+        }, 500);
+    }, 3000); // Nach 3 Sekunden verschwindet die Nachricht
+}
+
 // Funktion zum Rendern der Packs nach Filter (Suchbegriff, Tab oder Favorites)
-// Funktion zum Erstellen der Pack-Elemente und Rendern der Packs
 function renderPacks(filter = "", tagFilter = "All") {
     packContainer.innerHTML = ""; // Alte Packs entfernen
 
@@ -89,30 +117,15 @@ function renderPacks(filter = "", tagFilter = "All") {
                 
                 // Link in die Zwischenablage kopieren
                 navigator.clipboard.writeText(link).then(() => {
-                    // Nach erfolgreichem Kopieren, Browser-Benachrichtigung senden
-                    if ("Notification" in window) {
-                        if (Notification.permission === "granted") {
-                            new Notification("Link copied!", {
-                                body: "Der Link wurde erfolgreich in die Zwischenablage kopiert.",
-                                icon: "./assets/notification-icon.png"  // Optional: Dein Icon für die Benachrichtigung
-                            });
-                        } else if (Notification.permission !== "denied") {
-                            Notification.requestPermission().then(permission => {
-                                if (permission === "granted") {
-                                    new Notification("Link copied!", {
-                                        body: "Der Link wurde erfolgreich in die Zwischenablage kopiert.",
-                                        icon: "./assets/notification-icon.png"
-                                    });
-                                }
-                            });
-                        }
-                    }
+                    // Zeige Toast-Nachricht "Link copied!"
+                    showToast("Link copied!");
                 }).catch((err) => {
                     console.error('Fehler beim Kopieren des Links: ', err);  // Fehlerbehandlung
                 });
             });
         });
 }
+
 
 // Event für die Suche
 searchInput.addEventListener("input", e => {
