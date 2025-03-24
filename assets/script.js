@@ -63,7 +63,7 @@ function renderPacks(filter = "", tagFilter = "All") {
         <h2>${pack.name}</h2>
         <p>${pack.description}</p>
         <div class="pack-actions">
-            <a href="${pack.file}" download class="download-btn">Download</a>  <!-- Download-Link hinzugefügt -->
+            <a href="${pack.file}" download class="download-btn">Download</a>  
             <button class="favorite-btn ${isFavorite ? 'favorited' : ''}" data-pack-name="${pack.name}">
                 <i class="star-icon"></i> 
             </button>
@@ -73,6 +73,7 @@ function renderPacks(filter = "", tagFilter = "All") {
         </div>
     </div>
 `;
+
             packContainer.appendChild(packElement);
 
             // Event-Listener für den Favorite-Button
