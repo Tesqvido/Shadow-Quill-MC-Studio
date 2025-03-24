@@ -1,3 +1,96 @@
+/* Allgemeines Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+}
+
+.top-banner {
+    position: relative;
+    height: 180px;  /* Banner bleibt kompakt */
+    overflow: hidden;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-search-container {
+    display: flex;  /* Flexbox für horizontale Anordnung */
+    justify-content: space-between;  /* Platzierung: Logo links, restliche Elemente rechts */
+    align-items: center;  /* Zentriere die Inhalte vertikal */
+    padding: 10px 30px;  /* Abstand zum Rand */
+    background-color: #222;
+}
+
+.logo-title {
+    display: flex;  /* Logo und Name nebeneinander */
+    align-items: center;
+}
+
+.logo {
+    height: 40px;  /* Kleinere Höhe für das Logo */
+    margin-right: 10px;  /* Abstand zwischen Logo und Name */
+}
+
+h1 {
+    font-size: 1.5rem;  /* Kleinere Schriftgröße für Titel */
+    color: white;
+    margin: 0;
+}
+
+nav {
+    display: flex;  /* Horizontale Anordnung der Navigations-Links */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+}
+
+.search-sort {
+    position: relative;
+}
+
+.search-bar {
+    padding: 8px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pack-list {
+    margin-top: 20px;  /* Mehr Abstand zwischen Banner und Packs */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.sort-dropdown {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
 /* Pack-Listing */
 .pack-list {
     display: grid;
@@ -105,4 +198,45 @@
 
 .favorite-btn.favorited {
     color: gold;
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+#share-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none;
 }
