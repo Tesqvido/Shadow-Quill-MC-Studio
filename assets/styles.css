@@ -110,9 +110,12 @@ nav ul li a {
 }
 
 .pack-icon {
-    width: 150px;
-    object-fit: cover;
+    width: 150px;    /* Feste Breite */
+    height: 150px;   /* Feste Höhe */
+    object-fit: cover;  /* Skaliert das Bild, ohne das Seitenverhältnis zu verlieren */
+    border-radius: 10px;  /* Optional: abgerundete Ecken */
 }
+
 
 .pack-info {
     padding: 15px;
