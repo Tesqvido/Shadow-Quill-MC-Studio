@@ -117,6 +117,7 @@ nav ul li a {
 .pack-info {
     padding: 15px;
     flex-grow: 1;  /* Macht den Bereich flexibel, damit der Inhalt sich anpasst */
+    font-color: #FFFFFF;
 }
 
 .pack-info h2 {
