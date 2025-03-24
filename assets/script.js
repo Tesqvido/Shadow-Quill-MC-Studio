@@ -1,11 +1,3 @@
-const hamburgerMenuBtn = document.querySelector('.hamburger-menu');
-const mobileNav = document.querySelector('#mobile-nav');
-
-hamburgerMenuBtn.addEventListener('click', () => {
-    mobileNav.classList.toggle('hidden');
-});
-
-
 // Packs-Daten simulieren (wird später dynamisch gemacht)
 const packs = [
     { name: "Chat Ranks", tag: ["Addon"], description: "Add chat ranks to your server.", img: "./assets/chatranks.png", file: "./downloads/chatranks.zip" },
