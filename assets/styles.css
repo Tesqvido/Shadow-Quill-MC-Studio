@@ -63,8 +63,10 @@ nav ul li a {
 }
 
 .search-sort {
-    margin-top: -30px;  /* Suchleiste kompakt positioniert */
+    margin-top: 20px;  /* Abstand unterhalb des Banners */
     text-align: center;
+    position: relative;  /* Relative Positionierung für Flexibilität */
+    z-index: 10;  /* Damit die Suchleiste über anderen Elementen bleibt */
 }
 
 .search-bar {
@@ -73,6 +75,7 @@ nav ul li a {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 
 .pack-list {
     margin-top: 20px;  /* Mehr Abstand zwischen Banner und Packs */
