@@ -15,7 +15,6 @@ const tabToTagMap = {
     "Worlds": "World",
     "Texture Packs": "Texture Pack",
     "Favoriten": "Favorites",
-    "Kontakt": "All",
     "All": "All"
 };
 
