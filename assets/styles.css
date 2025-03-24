@@ -221,27 +221,6 @@ footer {
     margin-top: 20px;
 }
 
-.link-copied-text {
-    position: absolute;
-    top: -25px; 
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #2D9CDB;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    animation: fadeInOut 2s ease;
-    z-index: 1000;  /* Sicherstellen, dass es im Vordergrund bleibt */
-}
-
-
-@keyframes fadeInOut {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
 .hidden {
     display: none;
 }
