@@ -1,41 +1,51 @@
-/* Allgemeines Styling */
-/* Standard-Styling für größere Bildschirme */
-/* Hamburger-Button ausblenden für große Bildschirme */
+/* Hamburger-Menü-Button */
 .hamburger-menu {
+    display: none;  /* Zuerst ausblenden */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Verstecke das mobile Menü standardmäßig */
+#mobile-nav {
     display: none;
+    background-color: #222;
+    padding: 10px;
 }
 
-/* Navigation sichtbar machen für kleine Geräte */
+/* Wenn das Menü geöffnet wird, sichtbar machen */
+#mobile-nav.hidden {
+    display: block;
+}
+
+/* Media Query: Für kleinere Bildschirme */
 @media (max-width: 768px) {
+    .nav-search-container nav ul {
+        display: none;  /* Verstecke das Desktop-Menü */
+    }
+
     .hamburger-menu {
-        display: block;  /* Zeigt den Hamburger-Button */
+        display: block;  /* Zeige den Hamburger-Menü-Button */
     }
 
-    #mobile-nav {
-        display: none;  /* Navigation verstecken */
+    #mobile-nav ul {
+        display: flex;
+        flex-direction: column;  /* Menü-Links untereinander anordnen */
+        list-style: none;
+        padding: 0;
     }
 
-    #mobile-nav.open {
-        display: block;  /* Zeigt die Navigation an, wenn sie geöffnet wird */
-    }
-}
-
-
-/* Styling für Handys (Bildschirmbreite unter 480px) */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.2rem;  /* Kleinere Schriftgröße für Handys */
+    #mobile-nav ul li {
+        margin: 10px 0;  /* Abstand zwischen den Links */
     }
 
-    .pack {
-        flex-direction: row;  /* Horizontal, um Platz zu sparen */
-    }
-
-    .pack-icon {
-        width: 80px;  /* Kleinere Icons */
-        height: 80px;
+    .search-sort {
+        margin-top: 10px;  /* Abstand nach unten */
     }
 }
+
 
 
 header {
