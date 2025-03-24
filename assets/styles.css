@@ -187,3 +187,29 @@ footer {
     display: none;
 }
 
+.favorite-btn {
+    background: none;
+    border: none;
+    color: gray;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.favorite-btn.favorited {
+    color: gold;  /* Goldene Farbe für favorisierte Packs */
+}
+
+.star-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url('./assets/star-empty.png');  /* Leer-Stern */
+    background-size: contain;
+    margin-right: 5px;
+}
+
+.favorite-btn.favorited .star-icon {
+    background-image: url('./assets/star-filled.png');  /* Goldener Stern */
+}
