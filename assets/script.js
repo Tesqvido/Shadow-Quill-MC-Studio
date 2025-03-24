@@ -2,9 +2,17 @@
 const packs = [
     { name: "Chat Ranks", tag: ["Addon"], description: "Add chat ranks to your server.", img: "./assets/chatranks.png", file: "./downloads/chatranks.zip" },
     { name: "Custom join message", tag: ["Addon", "Texture Pack"], description: "Select between different join messages in-game.", img: "./assets/join-msg.png", file: "./downloads/joinmsg.zip" },
-    { name: "Placeholder", tag: ["Addon"], description: "This pack is under development.", img: "./assets/pack2.png", file: "./downloads/servergui.zip" },
-    { name: "Placeholder", tag: ["Addon"], description: "This pack is under development.", img: "./assets/pack2.png", file: "./downloads/servergui.zip" },
-    { name: "Fantasy World", tag: ["World"], description: "Custom fantasy world map.", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" }
+    { name: "Placeholder Addon", tag: ["Addon"], description: "This pack is under development. (For Addon)", img: "./assets/pack2.png", file: "./downloads/servergui.zip" },
+    { name: "Placeholder Addon", tag: ["Addon"], description: "This pack is under development. (For Addon)", img: "./assets/pack2.png", file: "./downloads/servergui.zip" },
+    { name: "Placeholder World", tag: ["World"], description: "This pack is under development. (For World)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
+    { name: "Placeholder World", tag: ["World"], description: "This pack is under development. (For World)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
+    { name: "Placeholder World", tag: ["World"], description: "This pack is under development. (For World)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
+    { name: "Placeholder World", tag: ["World"], description: "This pack is under development. (For World)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
+    { name: "Placeholder RP", tag: ["Texture Pack"], description: "This pack is under development. (For Texture Pack)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
+    { name: "Placeholder RP", tag: ["Texture Pack"], description: "This pack is under development. (For Texture Pack)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
+    { name: "Placeholder RP", tag: ["Texture Pack"], description: "This pack is under development. (For Texture Pack)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
+    { name: "Placeholder RP", tag: ["Texture Pack"], description: "This pack is under development. (For Texture Pack)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
+    { name: "Placeholder RP", tag: ["Texture Pack"], description: "This pack is under development. (For Texture Pack)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" }
 ];
 
 
