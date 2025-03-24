@@ -1,24 +1,25 @@
 /* Allgemeines Styling */
 /* Standard-Styling für größere Bildschirme */
-body {
-    font-size: 16px;
+/* Hamburger-Button ausblenden für große Bildschirme */
+.hamburger-menu {
+    display: none;
 }
 
-/* Styling für Tablets (Bildschirmbreite unter 768px) */
+/* Navigation sichtbar machen für kleine Geräte */
 @media (max-width: 768px) {
-    .nav-search-container {
-        flex-direction: column;  /* Navigation untereinander anordnen */
-        align-items: flex-start; /* Links ausrichten */
+    .hamburger-menu {
+        display: block;  /* Zeigt den Hamburger-Button */
     }
 
-    .pack-list {
-        grid-template-columns: 1fr;  /* Nur eine Spalte für Packs */
+    #mobile-nav {
+        display: none;  /* Navigation verstecken */
     }
 
-    .pack {
-        padding: 10px;  /* Weniger Padding für kleinere Screens */
+    #mobile-nav.open {
+        display: block;  /* Zeigt die Navigation an, wenn sie geöffnet wird */
     }
 }
+
 
 /* Styling für Handys (Bildschirmbreite unter 480px) */
 @media (max-width: 480px) {
