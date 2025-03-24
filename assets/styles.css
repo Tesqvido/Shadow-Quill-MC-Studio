@@ -151,12 +151,13 @@ nav ul li a {
     background-color: #2375A8;
 }
 
-/* Die Zeile unterhalb des Download-Buttons für die Share- und Favoriten-Buttons */
+/* Layout für die Share- und Favoriten-Buttons nebeneinander */
 .pack-actions {
     display: flex;
     justify-content: space-between;
     padding: 15px;
     gap: 10px;  /* Abstand zwischen den Buttons */
+    flex-wrap: wrap;  /* Damit die Buttons auch nebeneinander bleiben, aber auf kleinen Bildschirmen umbrochen werden */
 }
 
 /* Favoriten-Button */
