@@ -14,37 +14,38 @@ const tabToTagMap = {
     "Addons": "Addon",
     "Worlds": "World",
     "Texture Packs": "Texture Pack",
-    "Favorites": "Favorites",
+    "Favoriten": "Favorites",
     "All": "All"
 };
 
-// Favorites aus localStorage laden oder leeres Array
-let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+// favortiten aus localStorage laden oder leeres Array
+let favortiten = JSON.parse(localStorage.getItem('favortiten')) || [];
 
 // Funktion zum Favorisieren eines Packs
 function toggleFavorite(packName) {
-    if (favorites.includes(packName)) {
-        favorites = favorites.filter(fav => fav !== packName);  // Entfernen
+    if (favortiten.includes(packName)) {
+        favortiten = favortiten.filter(fav => fav !== packName);  // Entfernen
     } else {
-        favorites.push(packName);  // Hinzufügen
+        favortiten.push(packName);  // Hinzufügen
     }
-    localStorage.setItem('favorites', JSON.stringify(favorites));  // Speichern
+    localStorage.setItem('favortiten', JSON.stringify(favortiten));  // Speichern
 }
 
-// Funktion zum Rendern der Packs nach Filter (Suchbegriff, Tab oder Favorites)
+// Funktion zum Rendern der Packs nach Filter (Suchbegriff, Tab oder favortiten)
 function renderPacks(filter = "", tagFilter = "All") {
     packContainer.innerHTML = ""; // Alte Packs entfernen
 
     packs
         .filter(pack =>
             pack.name.toLowerCase().includes(filter.toLowerCase()) &&
-            (tagFilter === "All" || (tagFilter === "Favorites" ? favorites.includes(pack.name) : pack.tag === tagFilter))
+            (tagFilter === "All" || (tagFilter === "favortiten" ? favortiten.includes(pack.name) : pack.tag === tagFilter))
         )
         .forEach(pack => {
             const packElement = document.createElement("div");
             packElement.classList.add("pack");
 
-            const isFavorite = favorites.includes(pack.name);  // Überprüfen, ob Pack favorisiert ist
+            const isFavorite = favortiten.includes(pack.name);  // Überprüfen, ob Pack favorisiert ist
             const encodedPackName = encodeURIComponent(pack.name); // Encode für URL
             const shareLink = `${window.location.origin}${window.location.pathname}?pack=${encodedPackName}`;
 
@@ -66,9 +67,9 @@ function renderPacks(filter = "", tagFilter = "All") {
 `;
             packContainer.appendChild(packElement);
 
-            // Event-Listener für den Favorites-Button
+            // Event-Listener für den favortiten-Button
             packElement.querySelector(".favorite-btn").addEventListener("click", (e) => {
-                toggleFavorite(pack.name);  // Favoritesstatus toggeln
+                toggleFavorite(pack.name);  // favortitenstatus toggeln
                 renderPacks(filter, tagFilter);  // Neu rendern, um den Sternstatus zu aktualisieren
             });
         });
