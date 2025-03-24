@@ -178,8 +178,8 @@ nav ul li a {
 
 /* Stern-Symbol anzeigen */
 .star-icon {
-    width: 20px;  /* Größe des Sterns */
-    height: 20px;
+    width: 30px;  /* Größe des Sterns */
+    height: 30px;
     background-image: url('star-empty.png');  /* Stern-Hintergrundbild */
     background-size: contain;  /* Sicherstellen, dass das Bild sich korrekt skaliert */
     background-repeat: no-repeat;  /* Verhindert Wiederholung des Sternbilds */
