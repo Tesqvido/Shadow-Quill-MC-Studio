@@ -221,33 +221,23 @@ footer {
     margin-top: 20px;
 }
 
-#share-popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.popup-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.popup-content input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
+.link-copied-text {
+    position: absolute;
+    top: -25px;  /* Text oberhalb des Share-Buttons */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2D9CDB;
+    color: white;
+    padding: 5px 10px;
     border-radius: 5px;
+    font-size: 14px;
+    animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .hidden {
