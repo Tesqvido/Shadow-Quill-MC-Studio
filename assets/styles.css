@@ -162,8 +162,8 @@ nav ul li a {
 
 /* Favoriten-Button: Ungefüllt (Stern) */
 .star-icon {
-    width: 20px;  /* Größe anpassen */
-    height: 20px;
+    width: 40px;  /* Größe anpassen */
+    height: 40px;
     background-image: url('star-empty.png');
     background-size: contain;
     display: inline-block;
