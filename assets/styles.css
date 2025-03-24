@@ -124,7 +124,6 @@ nav ul li a {
 .pack-info {
     color: #FFFFFF;
     display: flex;
-    flex-direction: column;  /* Titel und Text vertikal anordnen */
     justify-content: center;  /* Vertikale Zentrierung */
     text-align: left;  /* Text links ausrichten */
     flex-grow: 1;  /* Flexibilität für Textcontainer */
