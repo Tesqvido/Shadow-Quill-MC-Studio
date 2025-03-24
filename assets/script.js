@@ -2,7 +2,7 @@
 const packs = [
     { name: "Chat Ranks", tag: "Addon", description: "Add chat ranks to your server.", img: "./assets/chatranks.png" },
     { name: "Server GUI", tag: "Addon", description: "Transforms mobs into human girls.", img: "pack2.png" },
-    { name: "Custom join message", tag: "Texture Pack", tag: "Addon", description: "Select between different join message just in-game. Simple and no coiding skill requiered.", img: "join-msg.png" },
+    { name: "Custom join message", tag: "Texture Pack", tag: "Addon", description: "Select between different join message just in-game. Simple and no coiding skill requiered.", img: "./assets/join-msg.png" },
     { name: "Fantasy World", tag: "World", description: "Custom fantasy world map.", img: "pack4.png" }
 ];
 
