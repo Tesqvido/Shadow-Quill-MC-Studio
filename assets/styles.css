@@ -223,7 +223,7 @@ footer {
 
 .link-copied-text {
     position: absolute;
-    top: -25px;  /* Text oberhalb des Share-Buttons */
+    top: -25px; 
     left: 50%;
     transform: translateX(-50%);
     background-color: #2D9CDB;
@@ -232,7 +232,9 @@ footer {
     border-radius: 5px;
     font-size: 14px;
     animation: fadeInOut 2s ease;
+    z-index: 1000;  /* Sicherstellen, dass es im Vordergrund bleibt */
 }
+
 
 @keyframes fadeInOut {
     0% { opacity: 0; }
