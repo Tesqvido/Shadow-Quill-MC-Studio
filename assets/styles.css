@@ -14,7 +14,7 @@ header {
 
 .top-banner {
     position: relative;
-    height: 180px;  /* Banner kompakter */
+    height: 180px;  /* Banner bleibt kompakt */
     overflow: hidden;
 }
 
@@ -26,15 +26,17 @@ header {
 
 .logo-nav {
     position: absolute;
-    top: 10px;
-    left: 20px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);  /* Zentriere die Logo-Nav-Gruppe */
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
 .logo {
-    height: 50px;  /* Kleinere Logo-Größe */
-    margin-right: 10px;
+    height: 50px;  /* Logo bleibt kleiner */
 }
 
 h1 {
@@ -43,13 +45,14 @@ h1 {
     margin: 0;
 }
 
+nav {
+    margin-left: 30px;  /* Abstand zwischen Titel und Links */
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    gap: 15px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
+    gap: 20px;
 }
 
 nav ul li a {
@@ -60,7 +63,7 @@ nav ul li a {
 }
 
 .search-sort {
-    margin-top: -40px;  /* Platz sparen */
+    margin-top: -30px;  /* Suchleiste kompakt positioniert */
     text-align: center;
 }
 
@@ -71,17 +74,17 @@ nav ul li a {
     border-radius: 5px;
 }
 
+.pack-list {
+    margin-top: 20px;  /* Mehr Abstand zwischen Banner und Packs */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
 .sort-dropdown {
     padding: 8px;
     border: none;
     border-radius: 5px;
-}
-
-.pack-list {
-    margin-top: 20px;  /* Abstand zwischen Banner und Packs */
-    display: flex;
-    justify-content: center;
-    gap: 15px;
 }
 
 /* Pack-Listing */
