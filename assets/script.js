@@ -115,3 +115,9 @@ function handlePackParam() {
 
 // Packs initial rendern (inklusive Überprüfung auf "pack" URL-Parameter)
 handlePackParam();
+
+
+    function toggleMenu() {
+        const nav = document.getElementById('mobile-nav');  // Menüelement holen
+        nav.classList.toggle('hidden');  // Schaltet die Klasse "hidden" um (zeigt oder versteckt das Menü)
+    }
