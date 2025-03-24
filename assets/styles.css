@@ -78,8 +78,6 @@ nav ul li a {
     border-radius: 5px;
 }
 
-
-
 .pack-list {
     margin-top: 20px;  /* Mehr Abstand zwischen Banner und Packs */
     display: flex;
@@ -116,7 +114,6 @@ nav ul li a {
     border-radius: 10px;  /* Optional: abgerundete Ecken */
 }
 
-
 .pack-info {
     padding: 15px;
 }
@@ -133,17 +130,58 @@ nav ul li a {
     gap: 10px;  /* Abstand zwischen den Buttons */
 }
 
-.download-btn, .favorite-btn, .social-share a {
-    width: 100%;  /* Damit die Buttons die gleiche Breite haben */
-    padding: 10px;
+/* Download-Button */
+.download-btn {
+    background-color: #2D9CDB;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
     text-align: center;
 }
 
+.download-btn:hover {
+    background-color: #2375A8;
+}
+
+/* Favoriten-Button */
+.favorite-btn {
+    background: none;
+    border: none;
+    padding: 10px;  /* Gleiche Padding-Größe wie beim Download-Button */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Favoriten-Button: Gefüllt (Stern) */
+.favorite-btn.favorited .star-icon {
+    background-image: url('star-filled.png');
+}
+
+/* Favoriten-Button: Ungefüllt (Stern) */
+.star-icon {
+    width: 20px;  /* Größe anpassen */
+    height: 20px;
+    background-image: url('star-empty.png');
+    background-size: contain;
+    display: inline-block;
+}
+
+/* Favoriten-Button: Stil für favorisierte Packs */
+.favorite-btn.favorited {
+    color: gold;  /* Sternfarbe nur ändern, wenn favorisiert */
+}
+
+/* Social Share-Button */
 .social-share a {
     background-color: #2D9CDB;  /* Farbe anpassen */
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    padding: 10px;
+    text-align: center;
 }
 
 .social-share a:hover {
@@ -157,6 +195,7 @@ footer {
     padding: 10px 0;
     margin-top: 20px;
 }
+
 #share-popup {
     position: fixed;
     top: 0;
@@ -190,28 +229,3 @@ footer {
     display: none;
 }
 
-.favorite-btn {
-    background: none;
-    border: none;
-    padding: 10px;  /* Gleiche Padding-Größe wie beim Download-Button */
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.favorite-btn.favorited .star-icon {
-    background-image: url('star-filled.png');  /* Gefüllter Stern */
-}
-
-.star-icon {
-    width: 20px;  /* Größe anpassen */
-    height: 20px;
-    background-image: url('star-empty.png');  /* Ungefüllter Stern */
-    background-size: contain;
-    display: inline-block;
-}
-
-.favorite-btn.favorited {
-    color: gold;  /* Sternfarbe nur ändern, wenn favorisiert */
-}
