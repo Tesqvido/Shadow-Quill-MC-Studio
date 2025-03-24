@@ -127,10 +127,11 @@ nav ul li a {
 }
 
 .pack-actions {
-    display: flex;
-    flex-direction: column;  /* Vertikale Anordnung der Buttons */
-    justify-content: flex-start;
-    gap: 10px;  /* Abstand zwischen den Buttons */
+    display: flex;  /* Flexbox aktivieren */
+    justify-content: space-between;  /* Platzierung der Buttons am Rand */
+    align-items: center;  /* Vertikale Zentrierung */
+    padding: 15px;  /* Padding für Abstand */
+    gap: 10px;  /* Abstand zwischen Share- und Favoriten-Button */
 }
 
 /* Download-Button */
@@ -147,49 +148,46 @@ nav ul li a {
     background-color: #2375A8;
 }
 
+/* Social Share-Button */
+.social-share {
+    display: flex;
+    align-items: center;  /* Zentriert den Share-Button */
+}
+
+.social-share a {
+    background-color: #2D9CDB;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px 15px;  /* Gleiche Größe wie der Download-Button */
+    text-align: center;
+}
+
+.social-share a:hover {
+    background-color: #2375A8;
+}
+
 /* Favoriten-Button */
 .favorite-btn {
     background: none;
     border: none;
-    padding: 10px;  /* Gleiche Padding-Größe wie beim Download-Button */
+    padding: 10px;  /* Einheitliches Padding für Favoriten-Button */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;  /* Abstand zum Pack-Icon */
 }
 
-/* Favoriten-Button: Gefüllt (Stern) */
-.favorite-btn.favorited .star-icon {
-    background-image: url('star-filled.png');
-}
-
-/* Favoriten-Button: Ungefüllt (Stern) */
 .star-icon {
-    width: 20px;  /* Größe anpassen */
+    width: 20px;
     height: 20px;
-    background-image: url('star-empty.png');
     background-size: contain;
     display: inline-block;
 }
 
 /* Favoriten-Button: Stil für favorisierte Packs */
 .favorite-btn.favorited {
-    color: gold;  /* Sternfarbe nur ändern, wenn favorisiert */
-}
-
-/* Social Share-Button */
-.social-share a {
-    background-color: #2D9CDB;  /* Farbe anpassen */
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-}
-
-.social-share a:hover {
-    background-color: #2375A8;
+    color: gold;
 }
 
 footer {
