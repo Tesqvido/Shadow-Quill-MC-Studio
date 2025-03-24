@@ -125,6 +125,7 @@ nav ul li a {
     color: #FFFFFF;
     display: flex;
     justify-content: center;  /* Vertikale Zentrierung */
+    flex-direction: column;  /* Titel und Text vertikal anordnen */
     text-align: left;  /* Text links ausrichten */
     flex-grow: 1;  /* Flexibilität für Textcontainer */
 }
