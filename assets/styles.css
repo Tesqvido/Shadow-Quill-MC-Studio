@@ -108,31 +108,29 @@ nav ul li a {
     flex-direction: column;  /* Flexbox für vertikale Anordnung der Pack-Elemente */
 }
 
-/* Layout für das Pack: Icon und Beschreibung nebeneinander */
-.pack-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    padding: 15px;
-}
-
-/* Pack-Icon */
 .pack-icon {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
+    width: 150px;    /* Feste Breite */
+    height: 150px;   /* Feste Höhe */
+    object-fit: cover;  /* Skaliert das Bild, ohne das Seitenverhältnis zu verlieren */
+    border-radius: 10px;  /* Optional: abgerundete Ecken */
+    margin-bottom: 10px;  /* Abstand zwischen Icon und Favoriten-Button */
 }
 
-/* Pack-Info */
 .pack-info {
-    flex-grow: 1;
+    padding: 15px;
+    flex-grow: 1;  /* Macht den Bereich flexibel, damit der Inhalt sich anpasst */
 }
 
-/* Pack-Info-Text (Beschreibung) */
 .pack-info h2 {
     margin: 0 0 10px 0;
     font-size: 20px;
+}
+
+.pack-actions {
+    display: flex;
+    flex-direction: column;  /* Vertikale Anordnung der Buttons */
+    justify-content: flex-start;
+    gap: 10px;  /* Abstand zwischen den Buttons */
 }
 
 /* Download-Button */
@@ -145,41 +143,20 @@ nav ul li a {
     text-align: center;
 }
 
-/* Hover-Effekt für den Download-Button */
 .download-btn:hover {
     background-color: #2375A8;
-}
-
-/* Die Zeile unterhalb des Download-Buttons für die Share- und Favoriten-Buttons */
-.pack-actions {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
 }
 
 /* Favoriten-Button */
 .favorite-btn {
     background: none;
     border: none;
-    padding: 10px;
+    padding: 10px;  /* Gleiche Padding-Größe wie beim Download-Button */
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* Share-Button */
-.social-share a {
-    background-color: #2D9CDB;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
-}
-
-.social-share a:hover {
-    background-color: #2375A8;
+    margin-top: 10px;  /* Abstand zum Pack-Icon */
 }
 
 /* Favoriten-Button: Gefüllt (Stern) */
@@ -189,15 +166,30 @@ nav ul li a {
 
 /* Favoriten-Button: Ungefüllt (Stern) */
 .star-icon {
-    width: 20px;
+    width: 20px;  /* Größe anpassen */
     height: 20px;
     background-image: url('star-empty.png');
     background-size: contain;
     display: inline-block;
 }
 
+/* Favoriten-Button: Stil für favorisierte Packs */
 .favorite-btn.favorited {
-    color: gold;
+    color: gold;  /* Sternfarbe nur ändern, wenn favorisiert */
+}
+
+/* Social Share-Button */
+.social-share a {
+    background-color: #2D9CDB;  /* Farbe anpassen */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.social-share a:hover {
+    background-color: #2375A8;
 }
 
 footer {
