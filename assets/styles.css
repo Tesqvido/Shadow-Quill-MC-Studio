@@ -136,7 +136,7 @@ nav ul li a {
     align-items: center;  /* Schaltflächen horizontal zentrieren */
     padding: 15px;  /* Padding für Abstand */
     gap: 10px;  /* Abstand zwischen den Schaltflächen */
-    margin-top: 15px;  /* Abstand nach dem Text, damit es nicht aneinander klebt */
+    margin-top: 20px;  /* Abstand nach dem Text, damit es nicht aneinander klebt */
 }
 
 
