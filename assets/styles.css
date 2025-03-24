@@ -143,7 +143,6 @@ nav ul li a {
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
-    margin-top: 15px;  /* Abstand nach der Beschreibung */
 }
 
 /* Hover-Effekt für den Download-Button */
@@ -151,13 +150,11 @@ nav ul li a {
     background-color: #2375A8;
 }
 
-/* Layout für die Share- und Favoriten-Buttons nebeneinander */
+/* Die Zeile unterhalb des Download-Buttons für die Share- und Favoriten-Buttons */
 .pack-actions {
     display: flex;
     justify-content: space-between;
     padding: 15px;
-    gap: 10px;  /* Abstand zwischen den Buttons */
-    flex-wrap: wrap;  /* Damit die Buttons auch nebeneinander bleiben, aber auf kleinen Bildschirmen umbrochen werden */
 }
 
 /* Favoriten-Button */
