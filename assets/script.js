@@ -1,9 +1,9 @@
 // Packs-Daten simulieren (wird später dynamisch gemacht)
 const packs = [
-    { name: "Chat Ranks", tag: "Addon", description: "Add chat ranks to your server.", img: "./assets/chatranks.png" },
-    { name: "Server GUI", tag: "Addon", description: "Transforms mobs into human girls.", img: "pack2.png" },
-    { name: "Custom join message", tag: "Texture Pack", tag: "Addon", description: "Select between different join message just in-game. Simple and no coiding skill requiered.", img: "./assets/join-msg.png" },
-    { name: "Fantasy World", tag: "World", description: "Custom fantasy world map.", img: "pack4.png" }
+    { name: "Chat Ranks", tag: "Addon", description: "Add chat ranks to your server.", img: "./assets/chatranks.png", file: "./downloads/chatranks.zip" },
+    { name: "Server GUI", tag: "Addon", description: "Transforms mobs into human girls.", img: "./assets/pack2.png", file: "./downloads/servergui.zip" },
+    { name: "Custom join message", tag: "Texture Pack", description: "Select between different join messages in-game.", img: "./assets/join-msg.png", file: "./downloads/joinmsg.zip" },
+    { name: "Fantasy World", tag: "World", description: "Custom fantasy world map.", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" }
 ];
 
 const packContainer = document.querySelector(".pack-list");
@@ -49,15 +49,15 @@ function renderPacks(filter = "", tagFilter = "All") {
             const encodedPackName = encodeURIComponent(pack.name); // Encode für URL
             const shareLink = `${window.location.origin}${window.location.pathname}?pack=${encodedPackName}`;
 
-            packElement.innerHTML = `
+           packElement.innerHTML = `
     <img src="${pack.img}" alt="${pack.name}" class="pack-icon">
     <div class="pack-info">
         <h2>${pack.name}</h2>
         <p>${pack.description}</p>
         <div class="pack-actions">
-            <button class="download-btn">Download</button>
+            <a href="${pack.file}" download class="download-btn">Download</a>  <!-- Download-Link hinzugefügt -->
             <button class="favorite-btn ${isFavorite ? 'favorited' : ''}" data-pack-name="${pack.name}">
-                <i class="star-icon"></i>  <!-- Stern bleibt, aber kein Text -->
+                <i class="star-icon"></i> 
             </button>
             <div class="social-share">
                 <a href="${shareLink}" target="_blank">🔗 Share</a>
@@ -65,8 +65,6 @@ function renderPacks(filter = "", tagFilter = "All") {
         </div>
     </div>
 `;
-
-
             packContainer.appendChild(packElement);
 
             // Event-Listener für den Favoriten-Button
