@@ -73,7 +73,7 @@ function renderPacks(filter = "", tagFilter = "All") {
         </div>
     </div>
 `;
-
+            
             packContainer.appendChild(packElement);
 
             // Event-Listener für den Favorite-Button
