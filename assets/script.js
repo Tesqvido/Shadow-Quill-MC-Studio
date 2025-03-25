@@ -1,7 +1,7 @@
 // Packs-Daten simulieren (wird später dynamisch gemacht)
 const packs = [
-    { name: "Chat Ranks", tag: ["Addon"], description: "Add chat ranks to your server.", img: "./assets//images/chatranks.png", file: "./downloads/chatranks.zip" },
-    { name: "Custom join message", tag: ["Addon", "Texture Pack"], description: "Select between different join messages in-game.", img: "./assets/images/join-msg.png", file: "./downloads/joinmsg.zip" },
+    { name: "Chat Ranks", tag: ["Addon"], description: "Add chat ranks to your server.", img: "/assets//images/chatranks.png", file: "./downloads/chatranks.zip" },
+    { name: "Custom join message", tag: ["Addon", "Texture Pack"], description: "Select between different join messages in-game.", img: "/assets/images/join-msg.png", file: "./downloads/joinmsg.zip" },
     { name: "Placeholder Addon", tag: ["Addon"], description: "This pack is under development. (For Addon)", img: "./assets/pack2.png", file: "./downloads/servergui.zip" },
     { name: "Placeholder Addon", tag: ["Addon"], description: "This pack is under development. (For Addon)", img: "./assets/pack2.png", file: "./downloads/servergui.zip" },
     { name: "Placeholder World", tag: ["World"], description: "This pack is under development. (For World)", img: "./assets/pack4.png", file: "./downloads/fantasyworld.zip" },
